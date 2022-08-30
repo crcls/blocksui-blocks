@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "@babel/typescript",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "auto-import",
+      {
+        "declarations": [
+          { "default": "React", "path": "react" },
+          { "default": "Styled", "path": "styled-components" }
+        ]
+      }
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
+}
