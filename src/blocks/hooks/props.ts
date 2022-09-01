@@ -2,7 +2,7 @@ import { Context } from 'react';
 
 export type Props = { [key: string]: any };
 
-import { IBlockContext } from '../../types';
+import { IBlockContext } from '@crcls/blocksui-sdk';
 
 const useProps = (context: Context<IBlockContext>, props: Props): Props => {
   const { getState } = React.useContext(context);

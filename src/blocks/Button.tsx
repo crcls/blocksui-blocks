@@ -22,7 +22,7 @@ export const options = {
     },
   },
   props: {
-    autofocus: 'boolean',
+    autoFocus: 'boolean',
     type: 'submit|reset|button',
   },
   state: {
@@ -46,7 +46,7 @@ const Button: React.ForwardRefRenderFunction<
   ref
 ) => {
   const [{ disabled, label }, updateState] = useState(context, stateKey);
-  const { autofocus, type } = useProps(context, props);
+  const { autoFocus, type } = useProps(context, props);
 
   const actions = {
     // @ts-ignore
@@ -66,7 +66,7 @@ const Button: React.ForwardRefRenderFunction<
   return (
     <button
       {...props}
-      autofocus={autofocus}
+      autoFocus={autoFocus}
       className={className}
       disabled={disabled}
       onClick={actions.click}

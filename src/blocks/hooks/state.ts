@@ -1,6 +1,6 @@
 import { Context } from 'react';
 
-import { IBlockContext, StateNode, UpdateStateFunc } from '../../types';
+import { IBlockContext, StateNode, UpdateStateFunc } from '@crcls/blocksui-sdk';
 
 function useState(
   context: Context<IBlockContext>,

@@ -1,6 +1,6 @@
 import { Context } from 'react';
 
-import { IBlockContext, ConnectionMap, MethodDict } from '../../types';
+import { IBlockContext, ConnectionMap, MethodDict } from '@crcls/blocksui-sdk';
 
 // Parse out the call methods for each connection from the parent meant for this child
 function useConnections(
