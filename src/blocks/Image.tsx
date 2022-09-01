@@ -62,7 +62,7 @@ export const options = {
 };
 
 function getImgClass(height = 0, width = 0, loaded = false): string {
-  let cn = [];
+  const cn = [];
 
   if (height > width) {
     cn.push('port');

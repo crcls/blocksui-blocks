@@ -28,7 +28,12 @@ module.exports = {
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      extends: ['plugin:react/recommended', 'airbnb-typescript', 'prettier'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'airbnb-typescript',
+        'prettier'
+      ],
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -45,6 +50,8 @@ module.exports = {
             extensions: ['.jsx', '.tsx'],
           },
         ],
+        '@typescript-eslint/ban-ts-comment': [0],
+        '@typescript-eslint/no-explicit-any': [0],
         'react/jsx-props-no-spreading': [0],
         'react/prop-types': [0],
         'react/jsx-uses-react': 'off',

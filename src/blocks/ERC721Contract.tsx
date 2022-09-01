@@ -45,7 +45,7 @@ const ERC721Contract: React.ForwardRefRenderFunction<
   const hooks = {
     async fetchMetadata(args: { [key: string]: any }) {
       if (contract && !metadata) {
-        let uri = await contract.tokenURI(args.tokenId as number);
+        const uri = await contract.tokenURI(args.tokenId as number);
         const url = normalizeUrl(uri, host);
         const meta = await fetch(url)
           .then((data) => data.json())

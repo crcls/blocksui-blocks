@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Link from './Link';
 import './Link.css';
 import { blockProp } from '@crcls/blocksui-sdk';

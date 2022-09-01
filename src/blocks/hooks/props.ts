@@ -12,9 +12,12 @@ const useProps = (context: Context<IBlockContext>, props: Props): Props => {
       const path = value.substring(6);
       const pathParts = path.split('.');
       const stateKey = pathParts.pop();
+      if (stateKey === undefined) {
+        throw new Error('No stateKey found');
+      }
       const statePath = pathParts.join('.');
       const state = getState(statePath);
-      memo[key] = state[stateKey!];
+      memo[key] = state[stateKey];
     } else {
       memo[key] = value;
     }

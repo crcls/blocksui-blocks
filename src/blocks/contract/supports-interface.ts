@@ -27,7 +27,7 @@ const methodSigs = {
 
 type MethodTypes = keyof typeof methodSigs;
 
-let codeCache: { [key: string]: string } = {};
+const codeCache: { [key: string]: string } = {};
 
 export async function hasMethod(
   provider: Provider,
@@ -68,7 +68,7 @@ export async function getERC721Contract(args: {
   abi?: { [key: string]: any };
 }): Promise<[Contract, boolean]> {
   const { provider, address, signer, abi } = args;
-  let isEnum = await supportsInterface(provider, address, 'ERC721Enumerable');
+  const isEnum = await supportsInterface(provider, address, 'ERC721Enumerable');
 
   if (!isEnum) {
     const is721 = await supportsInterface(provider, address, 'ERC721');
@@ -80,7 +80,7 @@ export async function getERC721Contract(args: {
     }
   }
 
-  let fallbackAbi: { [key: string]: any }[] = isEnum
+  const fallbackAbi: { [key: string]: any }[] = isEnum
     ? erc721EnumerableAbi
     : erc721Abi;
 

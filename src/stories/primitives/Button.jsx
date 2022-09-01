@@ -1,4 +1,3 @@
-import React from 'react';
 import { BlockContainer } from '@crcls/blocksui-sdk';
 
 const Button = ({ config }) => {

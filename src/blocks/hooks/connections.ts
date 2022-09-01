@@ -12,7 +12,7 @@ function useConnections(
 ) {
   const { connections } = React.useContext(context);
 
-  for (let cid of config.hooks) {
+  for (const cid of config.hooks) {
     connections[cid].hooks(hooks, id);
   }
 

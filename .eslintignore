@@ -1,3 +1,6 @@
 /dist
 /src/**/*.test.ts
 /src/**/*.test.tsx
+/scripts
+jest.config.ts
+jest.setup.ts
