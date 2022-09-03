@@ -18,6 +18,7 @@ export const options = {
     name: 'string',
     placeholder: 'string',
     type: 'email|hidden|number|password|tel|text|url',
+    label: 'string',
   },
   state: {
     value: 'string',
@@ -25,16 +26,12 @@ export const options = {
   type: 'Input',
 };
 
-const StyledInput = deps.styled.input`
-  padding: 9px;
-`;
-
 const Input: React.ForwardRefRenderFunction<
   HTMLInputElement,
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
   const [{ value }, updateState] = useState(context, stateKey);
-  const { autocomplete, autofocus, name, placeholder, type } = useProps(
+  const { autocomplete, autofocus, name, placeholder, type, label } = useProps(
     context,
     props
   );
@@ -57,18 +54,23 @@ const Input: React.ForwardRefRenderFunction<
   );
 
   return (
-    <StyledInput
-      {...props}
-      autocomplete={autocomplete}
-      autofocus={autofocus}
-      name={name}
-      placeholder={placeholder}
-      type={type}
-      value={value}
-      className={className}
-      onChange={handleChange}
-      ref={ref}
-    />
+    <>
+      <label htmlFor={name} className={className}>
+        {label}
+      </label>
+      <input
+        {...props}
+        autoComplete={autocomplete}
+        autoFocus={autofocus}
+        name={name}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        className={className}
+        onChange={handleChange}
+        ref={ref}
+      />
+    </>
   );
 };
 

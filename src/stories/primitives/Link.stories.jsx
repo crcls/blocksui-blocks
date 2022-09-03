@@ -4,7 +4,7 @@ import { blockProp } from '@crcls/blocksui-sdk';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Link',
+  title: 'Base Blocks/Link',
   component: Link,
 };
 
