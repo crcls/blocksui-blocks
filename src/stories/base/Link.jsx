@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { BlockContainer } from '@crcls/blocksui-sdk';
 
 const Link = ({ config }) => {

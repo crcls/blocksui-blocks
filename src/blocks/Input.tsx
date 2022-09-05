@@ -19,6 +19,7 @@ export const options = {
     placeholder: 'string',
     type: 'email|hidden|number|password|tel|text|url',
     label: 'string',
+    required: 'boolean',
   },
   state: {
     value: 'string',
@@ -31,10 +32,8 @@ const Input: React.ForwardRefRenderFunction<
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
   const [{ value }, updateState] = useState(context, stateKey);
-  const { autocomplete, autofocus, name, placeholder, type, label } = useProps(
-    context,
-    props
-  );
+  const { autocomplete, autofocus, name, placeholder, type, label, required } =
+    useProps(context, props);
 
   const actions = {
     change(args: { value: string }) {
@@ -69,6 +68,8 @@ const Input: React.ForwardRefRenderFunction<
         className={className}
         onChange={handleChange}
         ref={ref}
+        required={required}
+        aria-required={required}
       />
     </>
   );

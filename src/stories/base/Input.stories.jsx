@@ -22,6 +22,7 @@ BaseInput.args = {
         placeholder: blockProp('Harry Potter'),
         type: blockProp('text'),
         label: blockProp('First name'),
+        required: blockProp(true),
       },
       type: 'Input',
     },
