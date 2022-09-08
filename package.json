@@ -4,7 +4,9 @@
   "description": "Blocks UI Blocks - Used to build dApps with the Blocks UI Protocol",
   "main": "./dist/index.js",
   "type": "module",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "build:blocks": "rollup -c",
@@ -66,8 +68,8 @@
     "@types/lodash.set": "^4.3.6",
     "@types/react": "^18.0.6",
     "@types/styled-components": "^5.1.24",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "babel-loader": "^8.2.5",
     "babel-plugin-auto-import": "^1.1.0",
     "core-js": "^3.21.1",
@@ -111,7 +113,11 @@
     "styled-components": "^5.3.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint ./src"],
-    "*.{cjs,css,js,json,jsx,md,scss,ts,tsx,yml}": ["prettier --write"]
+    "*.{js,jsx,ts,tsx}": [
+      "eslint ./src"
+    ],
+    "*.{cjs,css,js,json,jsx,md,scss,ts,tsx,yml}": [
+      "prettier --write"
+    ]
   }
 }

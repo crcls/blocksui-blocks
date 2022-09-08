@@ -48,7 +48,7 @@ Primary.args = {
             required: blockProp(true),
           },
           state: {
-            value: '',
+            value: 'string',
           },
           type: 'Input',
         },
