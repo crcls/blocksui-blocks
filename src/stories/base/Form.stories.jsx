@@ -47,6 +47,9 @@ Primary.args = {
             label: blockProp('First name'),
             required: blockProp(true),
           },
+          state: {
+            value: '',
+          },
           type: 'Input',
         },
       ],
