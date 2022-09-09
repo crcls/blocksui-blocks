@@ -3,7 +3,7 @@ import Checkbox from './Input';
 import { blockProp } from '@crcls/blocksui-sdk';
 
 export default {
-  title: 'Base Blocks/Checkbox',
+  title: 'Primitives/Checkbox',
   component: Checkbox,
 };
 

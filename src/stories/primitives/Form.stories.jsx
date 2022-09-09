@@ -4,7 +4,7 @@ import { blockProp } from '@crcls/blocksui-sdk';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Base Blocks/Form',
+  title: 'Primitives/Form',
   component: Form,
 };
 
@@ -46,6 +46,9 @@ Primary.args = {
             type: blockProp('text'),
             label: blockProp('First name'),
             required: blockProp(true),
+          },
+          state: {
+            value: 'string',
           },
           type: 'Input',
         },
