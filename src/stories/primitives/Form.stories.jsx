@@ -1,17 +1,17 @@
-import Form from './Form';
+import Form from './Form'
 //import './Button.css';
-import { blockProp } from '@crcls/blocksui-sdk';
+import { blockProp } from '@crcls/blocksui-sdk'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Primitives/Form',
   component: Form,
-};
+}
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Form {...args} />;
+const Template = (args) => <Form {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 
 Primary.args = {
   config: [
@@ -56,4 +56,4 @@ Primary.args = {
       type: 'Form',
     },
   ],
-};
+}

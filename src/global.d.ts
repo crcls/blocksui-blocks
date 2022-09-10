@@ -1,1 +1,1 @@
-declare let deps: { [key: string]: any };
+declare let deps: { [key: string]: any }

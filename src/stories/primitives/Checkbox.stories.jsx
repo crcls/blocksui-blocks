@@ -1,15 +1,15 @@
-import Checkbox from './Input';
+import Checkbox from './Input'
 //import './Checkbox.css';
-import { blockProp } from '@crcls/blocksui-sdk';
+import { blockProp } from '@crcls/blocksui-sdk'
 
 export default {
   title: 'Primitives/Checkbox',
   component: Checkbox,
-};
+}
 
-const Template = (args) => <Checkbox {...args} />;
+const Template = (args) => <Checkbox {...args} />
 
-export const BaseCheckbox = Template.bind({});
+export const BaseCheckbox = Template.bind({})
 
 BaseCheckbox.args = {
   config: [
@@ -26,4 +26,4 @@ BaseCheckbox.args = {
       type: 'Checkbox',
     },
   ],
-};
+}

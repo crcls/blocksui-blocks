@@ -1,8 +1,8 @@
-import useConnections from './hooks/connections';
-import useState from './hooks/state';
-import useProps from './hooks/props';
+import useConnections from './hooks/connections'
+import useState from './hooks/state'
+import useProps from './hooks/props'
 
-import { ArgTuple, ComposableProps } from './types';
+import { ArgTuple, ComposableProps } from './types'
 
 export const options = {
   actions: {
@@ -25,32 +25,32 @@ export const options = {
     value: 'string',
   },
   type: 'Input',
-};
+}
 
 const Input: React.ForwardRefRenderFunction<
   HTMLInputElement,
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
-  const [{ value }, updateState] = useState(context, stateKey);
+  const [{ value }, updateState] = useState(context, stateKey)
   const { autocomplete, autofocus, name, placeholder, type, label, required } =
-    useProps(context, props);
+    useProps(context, props)
 
   const actions = {
     change(args: { value: string }) {
-      updateState('value', args.value);
+      updateState('value', args.value)
     },
-  };
+  }
 
-  const hooks = {};
+  const hooks = {}
 
-  useConnections(connectConfig, context, id, actions, hooks);
+  useConnections(connectConfig, context, id, actions, hooks)
 
   const handleChange = React.useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
-      actions.change({ value: event.currentTarget.value });
+      actions.change({ value: event.currentTarget.value })
     },
     []
-  );
+  )
 
   return (
     <>
@@ -72,9 +72,9 @@ const Input: React.ForwardRefRenderFunction<
         aria-required={required}
       />
     </>
-  );
-};
+  )
+}
 
-Input.displayName = 'Input';
+Input.displayName = 'Input'
 
-export default React.forwardRef<HTMLInputElement, ComposableProps>(Input);
+export default React.forwardRef<HTMLInputElement, ComposableProps>(Input)

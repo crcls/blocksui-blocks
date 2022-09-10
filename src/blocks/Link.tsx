@@ -1,5 +1,5 @@
-import { ComposableProps } from './types';
-import useProps from './hooks/props';
+import { ComposableProps } from './types'
+import useProps from './hooks/props'
 
 export const options = {
   actions: {},
@@ -12,13 +12,13 @@ export const options = {
   },
   state: {},
   type: '',
-};
+}
 
 const Link: React.ForwardRefRenderFunction<
   HTMLAnchorElement,
   ComposableProps
 > = ({ children, className, context, props }, ref) => {
-  const { href, role, target, title } = useProps(context, props);
+  const { href, role, target, title } = useProps(context, props)
 
   return (
     <a
@@ -32,9 +32,9 @@ const Link: React.ForwardRefRenderFunction<
     >
       {children}
     </a>
-  );
-};
+  )
+}
 
-Link.displayName = 'Link';
+Link.displayName = 'Link'
 
-export default React.forwardRef<HTMLAnchorElement, ComposableProps>(Link);
+export default React.forwardRef<HTMLAnchorElement, ComposableProps>(Link)

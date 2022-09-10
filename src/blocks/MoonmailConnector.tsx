@@ -1,7 +1,7 @@
-import useConnections from './hooks/connections';
-import useProps from './hooks/props';
+import useConnections from './hooks/connections'
+import useProps from './hooks/props'
 
-import { ArgTuple, ComposableProps } from './types';
+import { ArgTuple, ComposableProps } from './types'
 
 export const options = {
   actions: {
@@ -29,7 +29,7 @@ export const options = {
   },
   state: {},
   type: 'MoonmainConnector',
-};
+}
 
 const MoonmailConnector: React.FC<ComposableProps> = ({
   children,
@@ -42,12 +42,12 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
     POSTsuccess(args: any) {}, // eslint-disable-line
     POSTinProgress(args: any) {}, // eslint-disable-line
     POSTerror(args: any) {}, // eslint-disable-line
-  };
+  }
 
-  const { accountId } = useProps(context, props);
+  const { accountId } = useProps(context, props)
   const hooks = {
     post(args: { [key: string]: any }) {
-      actions.POSTinProgress('In progress');
+      actions.POSTinProgress('In progress')
       fetch(`https://client.moonmail.io/${accountId}/contacts`, {
         method: 'POST',
         headers: {
@@ -59,20 +59,20 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
       })
         .then((response) => {
           if (response.ok) {
-            return response.json();
+            return response.json()
           }
-          console.log(response);
-          actions.POSTerror(response);
+          console.log(response)
+          actions.POSTerror(response)
         })
         .then((data) => {
-          actions.POSTsuccess(data);
-        });
+          actions.POSTsuccess(data)
+        })
     },
-  };
+  }
 
-  useConnections(connectConfig, context, id, actions, hooks);
+  useConnections(connectConfig, context, id, actions, hooks)
 
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
-export default MoonmailConnector;
+export default MoonmailConnector
