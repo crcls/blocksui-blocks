@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-
 import { BlockContainer } from '@crcls/blocksui-sdk';
 
-const Button = ({ config }) => {
+const Form = ({ config }) => {
   return <BlockContainer config={config} />;
 };
 
-export default Button;
+export default Form;

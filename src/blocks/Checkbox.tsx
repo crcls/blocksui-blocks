@@ -7,33 +7,28 @@ import { ArgTuple, ComposableProps } from './types';
 export const options = {
   actions: {
     change: {
-      args: [['value', 'string'] as ArgTuple],
+      args: [['value', 'boolean'] as ArgTuple],
       returns: 'void',
     },
   },
   hooks: {},
   props: {
-    autocomplete: 'on|off',
-    autofocus: 'boolean',
     name: 'string',
-    placeholder: 'string',
-    type: 'email|hidden|number|password|tel|text|url',
+    id_for_label: 'string',
     label: 'string',
-    required: 'boolean',
   },
   state: {
-    value: 'string',
+    value: 'boolean',
   },
-  type: 'Input',
+  type: 'Checkbox',
 };
 
-const Input: React.ForwardRefRenderFunction<
+const Checkbox: React.ForwardRefRenderFunction<
   HTMLInputElement,
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
   const [{ value }, updateState] = useState(context, stateKey);
-  const { autocomplete, autofocus, name, placeholder, type, label, required } =
-    useProps(context, props);
+  const { name, label, idForLabel } = useProps(context, props);
 
   const actions = {
     change(args: { value: string }) {
@@ -47,34 +42,31 @@ const Input: React.ForwardRefRenderFunction<
 
   const handleChange = React.useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
-      actions.change({ value: event.currentTarget.value });
+      actions.change({ value: event.target.checked });
     },
     []
   );
 
   return (
     <>
-      <label htmlFor={name} className={className}>
+      <label htmlFor={idForLabel} className={className}>
         {label}
       </label>
       <input
         {...props}
-        autoComplete={autocomplete}
-        autoFocus={autofocus}
+        id={idForLabel}
         name={name}
-        placeholder={placeholder}
-        type={type}
-        value={value}
+        type="checkbox"
+        value={id}
         className={className}
         onChange={handleChange}
+        checked={value}
         ref={ref}
-        required={required}
-        aria-required={required}
       />
     </>
   );
 };
 
-Input.displayName = 'Input';
+Checkbox.displayName = 'Checkbox';
 
-export default React.forwardRef<HTMLInputElement, ComposableProps>(Input);
+export default React.forwardRef<HTMLInputElement, ComposableProps>(Checkbox);
