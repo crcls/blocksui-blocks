@@ -1,15 +1,15 @@
-import useConnections from './hooks/connections'
-import useState from './hooks/state'
+import useConnections from './hooks/connections';
+import useState from './hooks/state';
 
-import { ArgTuple, ComposableProps } from './types'
+import { ArgTuple, ComposableProps } from './types';
 
 export const options = {
   actions: {},
   hooks: {},
   props: {},
   state: {},
-  type: 'COMP_NAME'
-}
+  type: 'COMP_NAME',
+};
 
 const COMP_NAME: React.FC<ComposableProps> = ({
   children,
@@ -20,22 +20,19 @@ const COMP_NAME: React.FC<ComposableProps> = ({
   id,
   props,
 }) => {
-  const [state, updateState] = useState(context, stateKey)
+  const [state, updateState] = useState(context, stateKey);
 
-  const actions = {}
+  const actions = {};
 
-  const hooks = {}
+  const hooks = {};
 
-  useConnections(connectConfig, context, id, actions, hooks)
+  useConnections(connectConfig, context, id, actions, hooks);
 
   return (
-    <COMP_ELEM
-      {...props}
-      className={className}
-    >
+    <COMP_ELEM {...props} className={className}>
       {children}
     </COMP_ELEM>
-  )
-}
+  );
+};
 
-export default COMP_NAME
+export default COMP_NAME;

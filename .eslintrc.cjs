@@ -32,7 +32,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
         'airbnb-typescript',
-        'prettier'
+        'prettier',
       ],
       parserOptions: {
         ecmaFeatures: {

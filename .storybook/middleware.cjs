@@ -1,6 +1,5 @@
-const express = require('express')
+const express = require('express');
 
-module.exports = router => {
-  router.use(express.static('./dist'))
-}
-
+module.exports = (router) => {
+  router.use(express.static('./dist'));
+};
