@@ -5,15 +5,15 @@ import { ArgTuple, ComposableProps } from './types'
 
 export const options = {
   actions: {
-    POSTsuccess: {
+    error: {
       args: [['args', 'any'] as ArgTuple],
       returns: 'void',
     },
-    POSTinProgress: {
+    inProgress: {
       args: [['args', 'any'] as ArgTuple],
       returns: 'void',
     },
-    POSTerror: {
+    success: {
       args: [['args', 'any'] as ArgTuple],
       returns: 'void',
     },
@@ -39,15 +39,15 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
   props,
 }) => {
   const actions = {
-    POSTsuccess(args: any) {}, // eslint-disable-line
-    POSTinProgress(args: any) {}, // eslint-disable-line
-    POSTerror(args: any) {}, // eslint-disable-line
+    error(args: any) {}, // eslint-disable-line
+    inProgress(args: any) {}, // eslint-disable-line
+    success(args: any) {}, // eslint-disable-line
   }
 
   const { accountId } = useProps(context, props)
   const hooks = {
     post(args: { [key: string]: any }) {
-      actions.POSTinProgress('In progress')
+      actions.inProgress('In progress')
       fetch(`https://client.moonmail.io/${accountId}/contacts`, {
         method: 'POST',
         headers: {
@@ -62,10 +62,10 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
             return response.json()
           }
           console.log(response)
-          actions.POSTerror(response)
+          actions.error(response)
         })
         .then((data) => {
-          actions.POSTsuccess(data)
+          actions.success(data)
         })
     },
   }
