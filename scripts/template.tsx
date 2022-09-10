@@ -8,7 +8,7 @@ export const options = {
   hooks: {},
   props: {},
   state: {},
-  type: 'COMP_NAME'
+  type: 'COMP_NAME',
 }
 
 const COMP_NAME: React.FC<ComposableProps> = ({
@@ -29,10 +29,7 @@ const COMP_NAME: React.FC<ComposableProps> = ({
   useConnections(connectConfig, context, id, actions, hooks)
 
   return (
-    <COMP_ELEM
-      {...props}
-      className={className}
-    >
+    <COMP_ELEM {...props} className={className}>
       {children}
     </COMP_ELEM>
   )

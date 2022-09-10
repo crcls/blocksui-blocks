@@ -1,29 +1,29 @@
-import { Context } from 'react';
+import { Context } from 'react'
 
-export type Props = { [key: string]: any };
+export type Props = { [key: string]: any }
 
-import { IBlockContext } from '@crcls/blocksui-sdk';
+import { IBlockContext } from '@crcls/blocksui-sdk'
 
 const useProps = (context: Context<IBlockContext>, props: Props): Props => {
-  const { getState } = React.useContext(context);
+  const { getState } = React.useContext(context)
 
   return Object.entries(props).reduce<Props>((memo, [key, value]) => {
     if (typeof value === 'string' && value.startsWith('state:')) {
-      const path = value.substring(6);
-      const pathParts = path.split('.');
-      const stateKey = pathParts.pop();
+      const path = value.substring(6)
+      const pathParts = path.split('.')
+      const stateKey = pathParts.pop()
       if (stateKey === undefined) {
-        throw new Error('No stateKey found');
+        throw new Error('No stateKey found')
       }
-      const statePath = pathParts.join('.');
-      const state = getState(statePath);
-      memo[key] = state[stateKey];
+      const statePath = pathParts.join('.')
+      const state = getState(statePath)
+      memo[key] = state[stateKey]
     } else {
-      memo[key] = value;
+      memo[key] = value
     }
 
-    return memo;
-  }, {});
-};
+    return memo
+  }, {})
+}
 
-export default useProps;
+export default useProps

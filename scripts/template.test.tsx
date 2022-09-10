@@ -18,7 +18,7 @@ const blockConfig = {
   state: {
     stateKey: 'value',
   },
-  type: 'COMP_NAME'
+  type: 'COMP_NAME',
 }
 
 describe('', () => {

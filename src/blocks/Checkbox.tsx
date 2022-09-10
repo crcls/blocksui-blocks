@@ -1,8 +1,8 @@
-import useConnections from './hooks/connections';
-import useState from './hooks/state';
-import useProps from './hooks/props';
+import useConnections from './hooks/connections'
+import useState from './hooks/state'
+import useProps from './hooks/props'
 
-import { ArgTuple, ComposableProps } from './types';
+import { ArgTuple, ComposableProps } from './types'
 
 export const options = {
   actions: {
@@ -21,31 +21,31 @@ export const options = {
     value: 'boolean',
   },
   type: 'Checkbox',
-};
+}
 
 const Checkbox: React.ForwardRefRenderFunction<
   HTMLInputElement,
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
-  const [{ value }, updateState] = useState(context, stateKey);
-  const { name, label, idForLabel } = useProps(context, props);
+  const [{ value }, updateState] = useState(context, stateKey)
+  const { name, label, idForLabel } = useProps(context, props)
 
   const actions = {
     change(args: { value: string }) {
-      updateState('value', args.value);
+      updateState('value', args.value)
     },
-  };
+  }
 
-  const hooks = {};
+  const hooks = {}
 
-  useConnections(connectConfig, context, id, actions, hooks);
+  useConnections(connectConfig, context, id, actions, hooks)
 
   const handleChange = React.useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
-      actions.change({ value: event.target.checked });
+      actions.change({ value: event.target.checked })
     },
     []
-  );
+  )
 
   return (
     <>
@@ -64,9 +64,9 @@ const Checkbox: React.ForwardRefRenderFunction<
         ref={ref}
       />
     </>
-  );
-};
+  )
+}
 
-Checkbox.displayName = 'Checkbox';
+Checkbox.displayName = 'Checkbox'
 
-export default React.forwardRef<HTMLInputElement, ComposableProps>(Checkbox);
+export default React.forwardRef<HTMLInputElement, ComposableProps>(Checkbox)

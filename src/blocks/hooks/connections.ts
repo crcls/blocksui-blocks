@@ -1,6 +1,6 @@
-import { Context } from 'react';
+import { Context } from 'react'
 
-import { IBlockContext, ConnectionMap, MethodDict } from '@crcls/blocksui-sdk';
+import { IBlockContext, ConnectionMap, MethodDict } from '@crcls/blocksui-sdk'
 
 // Parse out the call methods for each connection from the parent meant for this child
 function useConnections(
@@ -10,13 +10,13 @@ function useConnections(
   actions: MethodDict,
   hooks: MethodDict
 ) {
-  const { connections } = React.useContext(context);
+  const { connections } = React.useContext(context)
 
   for (const cid of config.hooks) {
-    connections[cid].hooks(hooks, id);
+    connections[cid].hooks(hooks, id)
   }
 
-  connections[config.owns].actions(actions);
+  connections[config.owns].actions(actions)
 }
 
-export default useConnections;
+export default useConnections

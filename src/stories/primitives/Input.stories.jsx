@@ -1,15 +1,15 @@
-import Input from './Input';
+import Input from './Input'
 //import './Input.css';
-import { blockProp } from '@crcls/blocksui-sdk';
+import { blockProp } from '@crcls/blocksui-sdk'
 
 export default {
   title: 'Primitives/Input',
   component: Input,
-};
+}
 
-const Template = (args) => <Input {...args} />;
+const Template = (args) => <Input {...args} />
 
-export const BaseInput = Template.bind({});
+export const BaseInput = Template.bind({})
 
 BaseInput.args = {
   config: [
@@ -30,4 +30,4 @@ BaseInput.args = {
       type: 'Input',
     },
   ],
-};
+}

@@ -12,7 +12,7 @@
     "build:blocks": "rollup -c",
     "build-storybook": "build-storybook",
     "clean": "rimraf -r dist",
-    "format": "prettier --write \"*.{cjs,css,js,json,jsx,md,scss,ts,tsx,yml}\"",
+    "format": "prettier --write \"**/*.{cjs,css,js,json,jsx,md,scss,ts,tsx,yml}\"",
     "lint": "eslint",
     "lint-staged": "lint-staged",
     "prepare": "husky install",

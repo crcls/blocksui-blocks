@@ -1,4 +1,4 @@
-import { ComposableProps } from './types';
+import { ComposableProps } from './types'
 
 export const options = {
   actions: {},
@@ -6,7 +6,7 @@ export const options = {
   props: {},
   state: {},
   type: '',
-};
+}
 
 const Paragraph: React.ForwardRefRenderFunction<
   HTMLParagraphElement,
@@ -16,11 +16,11 @@ const Paragraph: React.ForwardRefRenderFunction<
     <p className={className} ref={ref}>
       {children}
     </p>
-  );
-};
+  )
+}
 
-Paragraph.displayName = 'Paragraph';
+Paragraph.displayName = 'Paragraph'
 
 export default React.forwardRef<HTMLParagraphElement, ComposableProps>(
   Paragraph
-);
+)

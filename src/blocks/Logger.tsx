@@ -1,6 +1,6 @@
-import useConnections from './hooks/connections';
+import useConnections from './hooks/connections'
 
-import { ArgTuple, ComposableProps } from './types';
+import { ArgTuple, ComposableProps } from './types'
 
 export const options = {
   hooks: {
@@ -12,7 +12,7 @@ export const options = {
   props: {},
   state: {},
   type: 'Logger',
-};
+}
 
 const Logger: React.FC<ComposableProps> = ({
   children,
@@ -20,16 +20,16 @@ const Logger: React.FC<ComposableProps> = ({
   context,
   id,
 }) => {
-  const actions = {};
+  const actions = {}
   const hooks = {
     log(args: { [key: string]: any }) {
-      console.log(args); // eslint-disable-line
+      console.log(args) // eslint-disable-line
     },
-  };
+  }
 
-  useConnections(connectConfig, context, id, actions, hooks);
+  useConnections(connectConfig, context, id, actions, hooks)
 
-  return <>{children}</>;
-};
+  return <>{children}</>
+}
 
-export default Logger;
+export default Logger

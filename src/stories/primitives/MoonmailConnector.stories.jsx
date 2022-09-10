@@ -1,26 +1,31 @@
-import Form from './Form'
+import MoonmailConnector from './MoonmailConnector'
 //import './Button.css';
 import { blockProp } from '@crcls/blocksui-sdk'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Primitives/Form',
-  component: Form,
+  title: 'Primitives/MoonmailConnector',
+  component: MoonmailConnector,
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Form {...args} />
+const Template = (args) => <MoonmailConnector {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
   config: [
     {
-      id: 'logger',
-      type: 'Logger',
+      id: 'moonMailConnector',
+      type: 'MoonmailConnector',
+      props: {
+        accountId: blockProp('2a397d1e-86db-4eb9-8191-78ae896744ab'),
+      },
     },
     {
-      connections: [{ action: 'submit', hooks: { logger: ['log'] } }],
+      connections: [
+        { action: 'submit', hooks: { moonMailConnector: ['post'] } },
+      ],
       children: [
         {
           children: ['Submit'],
@@ -41,14 +46,14 @@ Primary.args = {
           props: {
             autocomplete: blockProp('off'),
             autofocus: blockProp(false),
-            name: blockProp('first_name'),
-            placeholder: blockProp('Harry Potter'),
-            type: blockProp('text'),
-            label: blockProp('First name'),
+            name: blockProp('Address'), // here change name to Address this will be the email address
+            placeholder: blockProp('dobby@hogwarts.com'),
+            type: blockProp('email'), // email
+            label: blockProp('Email'),
             required: blockProp(true),
           },
           state: {
-            value: 'string',
+            value: '',
           },
           type: 'Input',
         },
