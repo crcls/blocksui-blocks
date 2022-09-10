@@ -57,15 +57,20 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
           Address: args.Address,
         }),
       })
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
-            return response.json()
+            const data = await response.json()
+            actions.success(data)
           }
+          else {
           console.log(response)
           actions.error(response)
+          }
+
         })
-        .then((data) => {
-          actions.success(data)
+        .catch((error) => {
+          console.error(error)
+          actions.error(error)
         })
     },
   }

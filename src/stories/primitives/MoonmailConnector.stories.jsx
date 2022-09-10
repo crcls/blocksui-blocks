@@ -46,9 +46,9 @@ Primary.args = {
           props: {
             autocomplete: blockProp('off'),
             autofocus: blockProp(false),
-            name: blockProp('Address'), // here change name to Address this will be the email address
+            name: blockProp('Address'),
             placeholder: blockProp('dobby@hogwarts.com'),
-            type: blockProp('email'), // email
+            type: blockProp('email'),
             label: blockProp('Email'),
             required: blockProp(true),
           },
