@@ -34,14 +34,14 @@ const FadeTransition: React.FC<ComposableProps> = ({
   const [isVisible, setIsVisible] = React.useState(false)
   const { time } = useProps(context, props)
   const hooks = {
+    /* eslint-disable */
     show(args: { [key: string]: any }) {
       setIsVisible(true)
-      console.log('show', children)
     },
     hide(args: { [key: string]: any }) {
-      console.log('hide', children)
       setIsVisible(false)
     },
+    /* eslint-enable */
   }
 
   React.useEffect(() => {

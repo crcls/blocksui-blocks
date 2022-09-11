@@ -46,39 +46,10 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
   }
 
   const { accountId } = useProps(context, props)
-  // const hooks = {
-  //   post(args: { [key: string]: any }) {
-  //     actions.inProgress('In progress')
-  //     fetch(`https://client.moonmail.io/${accountId}/contacts`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         Address: args.Address,
-  //       }),
-  //     })
-  //       .then(async (response) => {
-  //         if (response.ok) {
-  //           const data = await response.json()
-  //           actions.success(data)
-  //           return data
-  //         } else {
-  //           console.log(response)
-  //           actions.error(response)
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.error(error)
-  //         actions.error(error)
-  //       })
-  //   },
-  // }
 
   const hooks = {
     async post(args: { [key: string]: any }) {
       actions.inProgress('In progress')
-      console.log('inProgress')
       const [error, data] = await resolver(
         fetch(`https://client.moonmail.io/${accountId}/contacts`, {
           method: 'POST',
@@ -90,14 +61,9 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
           }),
         })
       )
-      console.log('error', error)
-      console.log('data', data)
       if (error || data === undefined || !data?.ok) {
-        console.log('Error')
         actions.error(error)
-        //throw error || new Error('Something went wrong')
       } else {
-        console.log('Success')
         actions.success(data)
       }
       return data
