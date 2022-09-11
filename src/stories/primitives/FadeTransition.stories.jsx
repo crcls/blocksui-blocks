@@ -101,6 +101,9 @@ Primary.args = {
       type: 'FadeTransition',
       children: ['Error!'],
       className: 'fade-in',
+      props: {
+        time: blockProp('10s'),
+      },
     },
   ],
 }
