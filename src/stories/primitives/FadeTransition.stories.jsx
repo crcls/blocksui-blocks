@@ -20,23 +20,29 @@ Primary.args = {
         accountId: blockProp('2a397d1e-86db-4eb9-8191-78ae896744ab'),
       },
       connections: [
-        { action: 'success', hooks: { fadeTransitionSuccess: ['show'] } },
-        { action: 'error', hooks: { fadeTransitionSuccess: ['hide'] } },
         {
-          action: 'inProgress',
-          hooks: { fadeTransitionSuccess: ['hide'] },
+          action: 'success',
+          hooks: {
+            fadeTransitionSuccess: ['show'],
+            fadeTransitionInProgress: ['hide'],
+            fadeTransitionError: ['hide'],
+          },
         },
-        { action: 'success', hooks: { fadeTransitionInProgress: ['hide'] } },
-        { action: 'error', hooks: { fadeTransitionInProgress: ['hide'] } },
         {
-          action: 'inProgress',
-          hooks: { fadeTransitionInProgress: ['show'] },
+          action: 'error',
+          hooks: {
+            fadeTransitionSuccess: ['hide'],
+            fadeTransitionInProgress: ['hide'],
+            fadeTransitionError: ['show'],
+          },
         },
-        { action: 'success', hooks: { fadeTransitionError: ['hide'] } },
-        { action: 'error', hooks: { fadeTransitionError: ['show'] } },
         {
           action: 'inProgress',
-          hooks: { fadeTransitionError: ['hide'] },
+          hooks: {
+            fadeTransitionSuccess: ['hide'],
+            fadeTransitionInProgress: ['show'],
+            fadeTransitionError: ['hide'],
+          },
         },
       ],
     },
@@ -90,7 +96,6 @@ Primary.args = {
       children: ['Loading ...'],
       className: 'fade-in-loading',
     },
-
     {
       id: 'fadeTransitionError',
       type: 'FadeTransition',

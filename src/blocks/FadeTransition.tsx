@@ -19,10 +19,10 @@ export const options = {
     time: 'string',
   },
   state: {},
-  type: 'FadeTransitions',
+  type: 'FadeTransition',
 }
 
-const FadeTransitions: React.FC<ComposableProps> = ({
+const FadeTransition: React.FC<ComposableProps> = ({
   children,
   connectConfig,
   context,
@@ -36,10 +36,10 @@ const FadeTransitions: React.FC<ComposableProps> = ({
   const hooks = {
     show(args: { [key: string]: any }) {
       setIsVisible(true)
-      console.log('show')
+      console.log('show', children)
     },
     hide(args: { [key: string]: any }) {
-      console.log('hide')
+      console.log('hide', children)
       setIsVisible(false)
     },
   }
@@ -53,4 +53,4 @@ const FadeTransitions: React.FC<ComposableProps> = ({
   return <div className={className}>{children}</div>
 }
 
-export default FadeTransitions
+export default FadeTransition
