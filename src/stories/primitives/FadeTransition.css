@@ -1,6 +1,6 @@
 :root {
-  --fade-transition-time: 5s;
-  --fade-animation: fadeIn var(--fade-transition-time)
+  --bui-fade-transition-time: 5s;
+  --fade-animation: fadeIn var(--bui-fade-transition-time);
 }
 
 .fade-in {

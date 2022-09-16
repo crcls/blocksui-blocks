@@ -46,7 +46,10 @@ const FadeTransition: React.FC<ComposableProps> = ({
 
   React.useEffect(() => {
     if (time) {
-      document.documentElement.style.setProperty('--fade-transition-time', time)
+      document.documentElement.style.setProperty(
+        '--bui-fade-transition-time',
+        time
+      )
     }
   }, [])
 
