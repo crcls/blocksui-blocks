@@ -1,5 +1,6 @@
 import useConnections from './hooks/connections'
 import useProps from './hooks/props'
+import { resolver } from './utils/async'
 
 import { ArgTuple, ComposableProps } from './types'
 
@@ -45,28 +46,27 @@ const MoonmailConnector: React.FC<ComposableProps> = ({
   }
 
   const { accountId } = useProps(context, props)
+
   const hooks = {
-    post(args: { [key: string]: any }) {
+    async post(args: { [key: string]: any }) {
       actions.inProgress('In progress')
-      fetch(`https://client.moonmail.io/${accountId}/contacts`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          Address: args.Address,
-        }),
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json()
-          }
-          console.log(response)
-          actions.error(response)
+      const [error, data] = await resolver(
+        fetch(`https://client.moonmail.io/${accountId}/contacts`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            Address: args.Address,
+          }),
         })
-        .then((data) => {
-          actions.success(data)
-        })
+      )
+      if (error || data === undefined || !data?.ok) {
+        actions.error(error)
+      } else {
+        actions.success(data)
+      }
+      return data
     },
   }
 

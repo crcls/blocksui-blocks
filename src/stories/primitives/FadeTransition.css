@@ -1,0 +1,67 @@
+:root {
+  --bui-fade-transition-time: 5s;
+  --fade-animation: fadeIn var(--bui-fade-transition-time);
+}
+
+.fade-in {
+  animation: var(--fade-animation);
+  -webkit-animation: var(--fade-animation);
+  -moz-animation: var(--fade-animation);
+  -o-animation: var(--fade-animation);
+  -ms-animation: var(--fade-animation);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-loading {
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  50% {
+    opacity: 0;
+  }
+}
