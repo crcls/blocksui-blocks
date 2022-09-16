@@ -1,0 +1,60 @@
+name: Deploy Main
+on:
+  push:
+    branches:
+      - devops/ci-deploy-blocks
+    paths:
+      - src/**
+      - package.json
+
+jobs:
+  Build:
+    runs-on:
+      - self-hosted
+      - nodejs16x
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: 'crcls'
+          node-version-file: '.nvmrc'
+          always-auth: 'true'
+      - name: Install modules
+        run: npm i --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Build Blocks
+        run: npm run build:blocks
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Distribute
+          path: ./dist/assets
+  Deploy:
+    runs-on:
+      - self-hosted
+      - ipfs
+      - deploy
+    needs: Build
+    if: github.ref_name == 'main' && contains(github.event.head_commit.message, 'blocks:')
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: 'crcls'
+          node-version-file: '.nvmrc'
+          always-auth: 'true'
+      - uses: actions/download-artifact@v3
+        with:
+          name: Distribute
+      - name: Upload to Web3.Storage
+        id: ipfs
+        run: echo ::set-output name=blocks_hash::`node ./scripts/ipfs-upload.js ./dist/assets/blocks`
+        env:
+          WEB3STORAGE_TOKEN: ${{ secrets.WEB3STORAGE_TOKEN }}
+      - name: Details
+        run: |
+          echo "Blocks CID:"
+          echo
+        env:
+          BLOCKS_HASH: ${{ steps.ipfs.outputs.blocks_hash }}
