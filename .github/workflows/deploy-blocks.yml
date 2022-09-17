@@ -9,9 +9,6 @@ on:
 
 jobs:
   Build:
-    runs-on:
-      - self-hosted
-      - nodejs16x
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -31,12 +28,7 @@ jobs:
           name: Distribute
           path: ./dist/assets
   Deploy:
-    runs-on:
-      - self-hosted
-      - ipfs
-      - deploy
     needs: Build
-    if: github.ref_name == 'main' && contains(github.event.head_commit.message, 'blocks:')
     steps:
       - uses: actions/setup-node@v2
         with:
