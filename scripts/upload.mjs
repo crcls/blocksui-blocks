@@ -13,6 +13,7 @@ async function getFiles(path) {
   console.log(`read ${files.length} file(s) from ${path}`)
   return files
 }
+
 async function storeFiles(files) {
   const client = makeStorageClient()
   const cid = await client.put(files)
