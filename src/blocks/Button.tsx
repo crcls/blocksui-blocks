@@ -32,12 +32,6 @@ export const options = {
   type: 'Button',
 }
 
-// const StyledButton = deps.styled.button`
-//   margin: 0 6px;
-//   padding: 9px;
-//   text-align: center;
-// `
-
 const Button: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ComposableProps
