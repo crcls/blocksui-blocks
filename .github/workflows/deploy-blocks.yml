@@ -2,7 +2,7 @@ name: Deploy Main
 on:
   push:
     branches:
-      - devops/ci-deploy-blocks
+      - main
     paths:
       - src/**
       - package.json
