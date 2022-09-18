@@ -11,7 +11,7 @@ export const options = {
 }
 
 const Container: React.ForwardRefRenderFunction<
-  HTMLParagraphElement,
+  HTMLDivElement,
   ComposableProps
 > = ({ children, className }, ref) => {
   return (
@@ -23,6 +23,4 @@ const Container: React.ForwardRefRenderFunction<
 
 Container.displayName = 'Container'
 
-export default React.forwardRef<HTMLParagraphElement, ComposableProps>(
-  Container
-)
+export default React.forwardRef<HTMLDivElement, ComposableProps>(Container)
