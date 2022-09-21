@@ -65,7 +65,7 @@ const Input: React.ForwardRefRenderFunction<
         placeholder={placeholder}
         type={type}
         value={value}
-        className={`bui-input-label ${className}`}
+        className={`bui-input-input ${className}`}
         onChange={handleChange}
         ref={ref}
         required={required}
