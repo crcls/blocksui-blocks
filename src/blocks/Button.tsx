@@ -61,7 +61,7 @@ const Button: React.ForwardRefRenderFunction<
     <button
       {...props}
       autoFocus={autoFocus}
-      className={className}
+      className={`bui-button ${className}`}
       disabled={disabled}
       onClick={actions.click}
       ref={ref}

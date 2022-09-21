@@ -29,7 +29,7 @@ export const options = {
     accountId: 'string',
   },
   state: {},
-  type: 'MoonmainConnector',
+  type: 'MoonmailConnector',
 }
 
 const MoonmailConnector: React.FC<ComposableProps> = ({

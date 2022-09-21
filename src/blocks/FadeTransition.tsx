@@ -59,7 +59,7 @@ const FadeTransition: React.FC<ComposableProps> = ({
     return null
   }
 
-  return <div className={className}>{children}</div>
+  return <div className={`bui-fade-in ${className}`}>{children}</div>
 }
 
 export default FadeTransition

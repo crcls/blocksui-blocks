@@ -13,8 +13,8 @@ export const options = {
   },
   hooks: {},
   props: {
-    autocomplete: 'on|off',
-    autofocus: 'boolean',
+    autoComplete: 'on|off',
+    autoFocus: 'boolean',
     name: 'string',
     placeholder: 'string',
     type: 'email|hidden|number|password|tel|text|url',
@@ -32,7 +32,7 @@ const Input: React.ForwardRefRenderFunction<
   ComposableProps
 > = ({ className, connectConfig, context, stateKey, id, props }, ref) => {
   const [{ value }, updateState] = useState(context, stateKey)
-  const { autocomplete, autofocus, name, placeholder, type, label, required } =
+  const { autoComplete, autoFocus, name, placeholder, type, label, required } =
     useProps(context, props)
 
   const actions = {
@@ -54,18 +54,18 @@ const Input: React.ForwardRefRenderFunction<
 
   return (
     <>
-      <label htmlFor={name} className={className}>
+      <label htmlFor={name} className="bui-input-label">
         {label}
       </label>
       <input
         {...props}
-        autoComplete={autocomplete}
-        autoFocus={autofocus}
+        autoComplete={autoComplete}
+        autoFocus={autoFocus}
         name={name}
         placeholder={placeholder}
         type={type}
         value={value}
-        className={className}
+        className={`bui-input-label ${className}`}
         onChange={handleChange}
         ref={ref}
         required={required}

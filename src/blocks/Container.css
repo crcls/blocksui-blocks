@@ -1,0 +1,10 @@
+.bui-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: #e5e7e9;
+  border-radius: 4px;
+  padding: 24px;
+  width: 480px;
+}

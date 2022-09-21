@@ -1,0 +1,39 @@
+.bui-button {
+  border: 0;
+  border-radius: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.011em;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bui-button:hover {
+  transform: scale(1.03);
+}
+
+.bui-button-primary {
+  background: linear-gradient(
+    135deg,
+    #ff8577 0%,
+    #ff757c 11.111111%,
+    #ff6485 22.222222%,
+    #ff5392 33.333333%,
+    #f845a1 44.444444%,
+    #eb3ab2 55.555556%,
+    #d837c6 66.666667%,
+    #be3cd9 77.777778%,
+    #9746ed 88.888889%,
+    #5551ff 100%
+  );
+  color: #fff;
+}
+
+.bui-button-small {
+  border-radius: 28px;
+  font-size: 14px;
+  letter-spacing: -0.006em;
+  line-height: 24px;
+  padding: 8px 16px;
+}

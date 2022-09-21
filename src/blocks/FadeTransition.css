@@ -1,0 +1,26 @@
+:root {
+  --bui-fade-transition-time: 5s;
+}
+
+.bui-fade-in {
+  animation: bui-fade var(--bui-fade-transition-time);
+}
+
+@keyframes bui-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bui-fade-in-loading {
+  animation: loading 1s linear infinite;
+}
+
+@keyframes bui-loading {
+  50% {
+    opacity: 0;
+  }
+}

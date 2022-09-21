@@ -15,7 +15,7 @@ const Container: React.ForwardRefRenderFunction<
   ComposableProps
 > = ({ children, className }, ref) => {
   return (
-    <div className={className} ref={ref}>
+    <div className={`bui-container ${className}`} ref={ref}>
       {children}
     </div>
   )

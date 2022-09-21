@@ -31,7 +31,7 @@ const Checkbox: React.ForwardRefRenderFunction<
   const { name, label, idForLabel } = useProps(context, props)
 
   const actions = {
-    change(args: { value: string }) {
+    change(args: { value: boolean }) {
       updateState('value', args.value)
     },
   }
@@ -42,7 +42,7 @@ const Checkbox: React.ForwardRefRenderFunction<
 
   const handleChange = React.useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
-      actions.change({ value: event.target.checked })
+      actions.change({ value: (event.target as HTMLInputElement).checked })
     },
     []
   )
