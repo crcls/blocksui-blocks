@@ -6,8 +6,6 @@ label.bui-input-label {
 }
 
 input.bui-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background-color: #fff;
   border-color: #6b7280;
