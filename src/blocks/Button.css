@@ -1,4 +1,4 @@
-.bui-button {
+button.bui-button {
   border: 0;
   border-radius: 32px;
   font-size: 16px;
@@ -9,11 +9,11 @@
   text-decoration: none;
 }
 
-.bui-button:hover {
+button.bui-button:hover {
   transform: scale(1.03);
 }
 
-.bui-button-primary {
+button.bui-button-primary {
   background: linear-gradient(
     135deg,
     #ff8577 0%,
@@ -30,7 +30,7 @@
   color: #fff;
 }
 
-.bui-button-small {
+button.bui-button-small {
   border-radius: 28px;
   font-size: 14px;
   letter-spacing: -0.006em;
