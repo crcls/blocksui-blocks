@@ -43,6 +43,19 @@
   </a>
 </p>
 
+## Table of Contents
+
+- [Moralis + Filecoin 1-2-Web3 Hackathon](#moralis--filecoin-1-2-web3-hackathon)
+  - [Use of hackathon tech](#use-of-hackathon-tech)
+- [Contributing](#contributing)
+  - [Types](#types)
+  - [Branches](#branches)
+  - [Commits](#commits)
+  - [Pull Requests](#pull-requests)
+  - [Merging Into Main](#merging-into-main)
+
+# Moralis + Filecoin 1-2-Web3 Hackathon.
+
 This project is the entry to the [Moralis](https://moralis.io/) x [Filecoin](https://filecoin.io/) hackathon from the [CRCLS](https://github.com/crcls) team. It consists of five repositories:
 
 - [Blocks UI App](https://github.com/crcls/blocksui-app)
@@ -51,14 +64,15 @@ This project is the entry to the [Moralis](https://moralis.io/) x [Filecoin](htt
 - [Blocks UI Network](https://github.com/crcls/blocksui-network)
 - [Blocks UI SDK](https://github.com/crcls/blocksui-sdk)
 
-## Table of Contents
+## Use of hackathon tech
 
-- [Contributing](#contributing)
-  - [Types](#types)
-  - [Branches](#branches)
-  - [Commits](#commits)
-  - [Pull Requests](#pull-requests)
-  - [Merging Into Main](#merging-into-main)
+1. [scripts/upload.mjs](https://github.com/crcls/blocksui-blocks/blob/main/scripts/upload.mjs) - Used in the GitHub actions deploy CI to upload the compiled Block Primitives to Web3.Storage
+
+- [Blocks UI App](https://github.com/crcls/blocksui-app)
+- [Blocks UI Blocks](https://github.com/crcls/blocksui-blocks)
+- [Blocks UI Contracts](https://github.com/crcls/blocksui-contract)
+- [Blocks UI Network](https://github.com/crcls/blocksui-network)
+- [Blocks UI SDK](https://github.com/crcls/blocksui-sdk)
 
 ## Contributing
 
