@@ -68,12 +68,6 @@ This project is the entry to the [Moralis](https://moralis.io/) x [Filecoin](htt
 
 1. [scripts/upload.mjs](https://github.com/crcls/blocksui-blocks/blob/main/scripts/upload.mjs) - Used in the GitHub actions deploy CI to upload the compiled Block Primitives to Web3.Storage
 
-- [Blocks UI App](https://github.com/crcls/blocksui-app)
-- [Blocks UI Blocks](https://github.com/crcls/blocksui-blocks)
-- [Blocks UI Contracts](https://github.com/crcls/blocksui-contract)
-- [Blocks UI Network](https://github.com/crcls/blocksui-network)
-- [Blocks UI SDK](https://github.com/crcls/blocksui-sdk)
-
 ## Contributing
 
 Code changes can fall into the types from the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
