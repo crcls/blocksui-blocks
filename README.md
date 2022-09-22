@@ -1,6 +1,55 @@
-# Blocks UI Blocks
+<p align="center">
+  <a href="https://blocksui.xyz/">
+    <img alt="Blocks UI Protocol" src="assets/blocksui.png" width="320" />
+  </a>
+</p>
 
-Blocks UI blocks.
+<h1 align="center">
+  Blocks UI Protocol: Decentralized UI Software as an NFT
+</h1>
+
+<p align="center">
+  🌎 💽 🤑
+</p>
+
+<p align="center">
+  <strong>
+    Decentralized. UI Software. As NFTs.
+  </strong>
+</p>
+
+<p align="center">
+  Providing an open and decentralized framework for building user interface software that is simple enough for anyone to use.
+</p>
+
+<p align="center">
+  <a href="https://filecoin.io/" style="display: inline-block">
+    <img src="assets/filecoin.svg" alt="Filecoin logo" width="40">
+  </a>
+  <a href="https://ipfs.tech/" style="display: inline-block">
+    <img src="assets/ipfs.svg" alt="IPFS logo" width="120">
+  </a>
+  <a href="https://litprotocol.com/" style="display: inline-block">
+    <img src="assets/lit-protocol.svg" alt="Lit Protocol logo" width="54">
+  </a>
+  <a href="https://moralis.io/" style="display: inline-block">
+    <img src="assets/moralis.svg" alt="Moralis logo" width="154">
+  </a>
+  <a href="https://polygon.technology/" style="display: inline-block">
+    <img src="assets/polygon.svg" alt="Polygon logo" width="166">
+  </a>
+  <a href="https://web3.storage/" style="display: inline-block">
+    <img src="assets/web3-storage.svg" alt="Web3 Storage logo" width="40">
+  </a>
+</p>
+
+This project is the entry to the [Moralis](https://moralis.io/) x [Filecoin](https://filecoin.io/) hackathon from the [CRCLS](https://github.com/crcls) team. It consists of five repositories:
+
+- [Blocks UI App](https://github.com/crcls/blocksui-app)
+- [Blocks UI Blocks](https://github.com/crcls/blocksui-blocks)
+- [Blocks UI Contracts](https://github.com/crcls/blocksui-contract)
+- [Blocks UI Network](https://github.com/crcls/blocksui-network)
+- [Blocks UI SDK](https://github.com/crcls/blocksui-sdk)
 
 ## Table of Contents
 
